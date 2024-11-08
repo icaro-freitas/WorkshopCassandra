@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table(value="departments")
+@Table(value = "departments")
 public class Department {
 
 	@PrimaryKey
@@ -13,6 +13,11 @@ public class Department {
 	private String name;
 
 	public Department() {
+	}
+
+	public Department(UUID id, String name) {		
+		this.id = id;
+		this.name = name;
 	}
 
 	public UUID getId() {
